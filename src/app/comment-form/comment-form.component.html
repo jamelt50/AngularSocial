@@ -1,0 +1,25 @@
+<form
+  action=""
+  class="bg-slate-700 p-4 rounded w-full"
+  [formGroup]="commentForm"
+  (ngSubmit)="ngComment()"
+>
+  <div>
+    <label class="block text-slate-50" for="contenu">Commentaire</label>
+    <input
+      class="py-1 px-3 bg-slate-200 my-3 rounded w-full text-slate-900"
+      type="text"
+      formControlName="contenu"
+      id="contenu"
+    />
+  </div>
+
+  <div class="flex justify-center items-center">
+    <button
+      class="bg-slate-50 text-slate-700 px-3 py-1 rounded hover:opacity-60 transition-all"
+      type="submit"
+    >
+      Envoyer
+    </button>
+  </div>
+</form>

@@ -1,0 +1,7 @@
+<div class="p-3">
+  <app-article-form (emitArticle)="pushArticle($event)"></app-article-form>
+  <app-article
+    [article]="article"
+    *ngFor="let article of articles"
+  ></app-article>
+</div>

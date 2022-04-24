@@ -1,0 +1,29 @@
+<div class="p-4">
+  <div>
+    <a
+      routerLink="/articles"
+      class="bg-slate-900 text-slate-50 px-3 py-2 rounded"
+    >
+      Retour</a
+    >
+  </div>
+  <div *ngIf="article">
+    <h1 class="text-4xl text-center">{{ article.titre }}</h1>
+
+    <div class="my-8">
+      <p>{{ article.contenu }}</p>
+    </div>
+    <div *ngIf="comments">
+      <div
+        class="bg-slate-900 text-slate-50 p-4 my-2 rounded"
+        *ngFor="let comment of comments"
+      >
+        <p>{{ comment.contenu }}</p>
+      </div>
+    </div>
+    <app-comment-form
+      (emitComment)="pushComment($event)"
+      [id_article]="article.id_article"
+    ></app-comment-form>
+  </div>
+</div>

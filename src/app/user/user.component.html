@@ -1,0 +1,14 @@
+<a routerLink="{{ '/utilisateurs/' + user.id }}" class="block">
+  <div
+    class="bg-slate-800 text-slate-50 rounded-lg m-8 p-4 flex flex-col justify-center items-center"
+  >
+    <img
+      *ngIf="user.avatar"
+      class="w-32 h-32 object-cover rounded-full"
+      [src]="user.avatar"
+      alt=""
+    />
+    <h3 class="text-xl my-3">{{ user.pseudo }}</h3>
+    <p><span>Niveau:</span>{{ user.niveau }}</p>
+  </div>
+</a>
